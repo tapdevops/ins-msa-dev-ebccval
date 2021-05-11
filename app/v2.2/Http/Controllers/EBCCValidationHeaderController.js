@@ -15,6 +15,7 @@
 
 	// Libraries
 	const KafkaServer = require( _directory_base + '/app/v2.0/Http/Libraries/KafkaServer.js' );
+	const getDate = require( _directory_base + '/app/v2.2/Http/Libraries/getDate.js')
 
 /*
  |--------------------------------------------------------------------------
@@ -47,7 +48,8 @@
 						INSERT_USER: req.body.INSERT_USER,
 						INSERT_TIME: req.body.INSERT_TIME,
 						STATUS_SYNC: req.body.STATUS_SYNC || "",
-						SYNC_TIME: req.body.SYNC_TIME || 0,
+						// SYNC_TIME: req.body.SYNC_TIME || 0,
+						SYNC_TIME: getDate.getDate(new Date()) || 0,
 						UPDATE_USER: req.body.UPDATE_USER || "",
 						UPDATE_TIME: req.body.UPDATE_TIME || 0
 					}
